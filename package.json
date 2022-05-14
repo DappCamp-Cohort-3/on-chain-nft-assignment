@@ -11,5 +11,8 @@
   "dependencies": {
     "@openzeppelin/contracts": "^4.6.0",
     "dotenv": "^16.0.1"
+  },
+  "scripts": {
+    "test": "npx hardhat test"
   }
 }
