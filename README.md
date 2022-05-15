@@ -4,7 +4,7 @@ The goal of this exercise is to develop an on-chain NFT collection and host it o
 
 A base contract is given here - `contracts/DappCampNFT.sol`. Use this contract to create your own NFT collection. Complete the following functions:
 
-- The collection array can contain the different texts or attributes you want to randomize for SVG image
+- The collection array can contain the different texts or attributes you want to randomize for SVG image. You can choose different texts or attributes for this collection based on your creativity.
 
 - `random(string memory input)`: Given an input string(`input`), it should return a random number
 
@@ -59,11 +59,6 @@ A base contract is given here - `contracts/DappCampNFT.sol`. Use this contract t
 ## Evaluation
 
 -   Create a fork of this repo
--   Create a new branch with your name. You can use the following command
-
-    ```
-    git checkout -b my-name
-    ```
 
 -   Install all dependencies
     ```
@@ -76,4 +71,5 @@ A base contract is given here - `contracts/DappCampNFT.sol`. Use this contract t
     ```
     npm test
     ```
--   Create a pull request from your forked repo to main branch of original repo to run the github workflow.
+
+-   Create a pull request from your forked repo to main branch of original repo to run the github workflow. The name of the pull request should be in the format `YOUR_NAME - On-Chain NFT Assignment`
