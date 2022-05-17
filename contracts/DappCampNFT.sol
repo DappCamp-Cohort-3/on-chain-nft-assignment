@@ -21,7 +21,9 @@ contract DappCampNFT is ERC721Enumerable, Ownable {
     }
 
     function pluck(uint256 tokenId, string memory keyPrefix, string[] memory sourceArray) internal pure returns (string memory) {
-
+        uint256 rand = random(string(abi.encodePacked(keyPrefix, toString(tokenId))));
+        string memory output = sourceArray[rand % sourceArray.length];
+        return output;
     }
 
     function tokenURI(uint256 tokenId) override public view returns (string memory) {
