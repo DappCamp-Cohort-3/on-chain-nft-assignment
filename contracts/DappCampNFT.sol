@@ -44,14 +44,6 @@ contract DappCampNFT is ERC721Enumerable, Ownable {
         return pluck(tokenId, "FIRST", collection);
     }
 
-    function getSecond(uint256 tokenId) public view returns (string memory) {
-        return pluck(tokenId, "SECOND", collection);
-    }
-
-    function getThird(uint256 tokenId) public view returns (string memory) {
-        return pluck(tokenId, "THIRD", collection);
-    }
-
     function tokenURI(uint256 tokenId)
         public
         view
