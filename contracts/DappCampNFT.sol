@@ -13,7 +13,7 @@ contract DappCampNFT is ERC721Enumerable, Ownable {
     constructor() ERC721("DappCamp NFT", "DCAMP") Ownable() {}
 
     string[] private collection = [
-        ""
+        "sword", "shield", "helmet", "armor", "dagger",
     ];
 
     function random(string memory input) internal pure returns (uint256) {
