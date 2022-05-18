@@ -6,9 +6,11 @@ A base contract is given here - `contracts/DappCampNFT.sol`. Use this contract t
 
 - The collection array can contain the different texts or attributes you want to randomize for SVG image. You can choose different texts or attributes for this collection based on your creativity.
 
-- `random(string memory input)`: Given an input string(`input`), it should return a random number
+- `random(string memory input)`: Given an input string(`input`), it should return a random number. This random number should be deterministic with the input value. Given same input it should return same random number each time
 
-- `pluck(uint256 tokenId, string memory keyPrefix, string[] memory sourceArray)`: It should generate a random number using both `keyPrefix` and `tokenId` and then pick and return an element from the given `sourceArray` containing multiple elements
+- `pluck(uint256 tokenId, string memory keyPrefix, string[] memory sourceArray)`: It should generate a random number using both `keyPrefix` and `tokenId` and then pick and return an element from the given `sourceArray` containing multiple elements. Here `keyPrefix` can be any string representing what type of collection you are picking from and `sourceArray` is the array of that collection items (called `collection` in our contract).
+    
+    For example, in `DeveloperDAO` [contract](https://github.com/Developer-DAO/developer-dao-nft-contract/blob/master/hh/contracts/Dev.sol) refer to `getOS` function, here `keyPrefix` is "OS" since it is representing the type of collection they are picking from and `sourceArray` is "osses" which is an array containing os names
 
 - `tokenURI(uint256 tokenId)`: This function should use the pluck and random functions defined above to generate a unique NFT metadata for each tokenId. It should return a string containing base64 json data which further contains base64 encoded svg image. An example data has been broken down for you below
 
@@ -73,3 +75,7 @@ A base contract is given here - `contracts/DappCampNFT.sol`. Use this contract t
     ```
 
 -   Create a pull request from your forked repo to main branch of original repo to run the github workflow. The name of the pull request should be in the format `YOUR_NAME - On-Chain NFT Assignment`
+
+## Note
+
+- To understand this concept of on-chain NFTs better take a look `DeveloperDAO` contract [here](https://github.com/Developer-DAO/developer-dao-nft-contract/blob/master/hh/contracts/Dev.sol)
