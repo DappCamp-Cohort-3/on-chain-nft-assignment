@@ -18,7 +18,7 @@ if (NETWORK == TEST_NETWORK) {
       url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
       accounts: [`0x${WALLET_PRIVATE_KEY}`]
     }
-  }
+  };
 }
 
 module.exports = {
