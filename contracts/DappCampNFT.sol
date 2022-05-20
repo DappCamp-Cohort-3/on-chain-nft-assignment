@@ -27,8 +27,14 @@ contract DappCampNFT is ERC721Enumerable, Ownable {
     }
 
     function tokenURI(uint256 tokenId) override public view returns (string memory) {
+        string memory randomCollectionValue = pluck(tokenId, "Medieval Stuff", collection);
+        string memory output = string(abi.encodePacked('<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100"><rect width="100" height="100" fill="blue" />', randomCollectionValue, '</svg>'));
+        string memory json = Base64.encode(bytes(string(abi.encodePacked('{"name": "Random Medieval Item', Strings.toString(tokenId), '", "description": "A Random Medieval Item, picked from a collection of medieval items!", "image": "data:image/svg+xml;base64,', Base64.encode(bytes(output)), '"}'))));
 
-    }
+        string memory uri = string(abi.encodePacked('data:application/json;base64,', json));
+
+        return uri;
+    }   
 
     function claim(uint256 tokenId) public {
         require(tokenId > 0 && tokenId < MAX_MINTABLE_TOKENS, "Token ID invalid");
