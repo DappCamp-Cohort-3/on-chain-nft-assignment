@@ -30,8 +30,8 @@ contract DappCampNFT is ERC721Enumerable, Ownable {
         string memory svgFirstPart ='<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100"><rect width="100" height="100" fill="blue" /><text x="10" y="120" class="base">';
         string memory svgSecondPart ='</text></svg>';
         string memory keyPrefix = "Locations";
-        uint256 svgTextContent = random(pluck(tokenId, keyPrefix, collection));
-        string memory svgString = string(abi.encodePacked(svgFirstPart, svgTextContent, svgSecondPart));
+        string memory svgContent = pluck(tokenId, keyPrefix, collection);
+        string memory svgString = string(abi.encodePacked(svgFirstPart, svgContent, svgSecondPart));
 
         string memory json = Base64.encode(bytes(string(abi.encodePacked('{"name": "Places and locations", "description": "This is about different locations", "image": "data:image/svg+xml;base64,', Base64.encode(bytes(svgString)), '"}'))));
         string memory jsonWithPrefix = string(abi.encodePacked('data:application/json;base64,', json));
