@@ -34,10 +34,12 @@ contract DappCampNFT is ERC721Enumerable, Ownable {
         string[3] memory parts;
         // keccak256
         parts[0] = '<svg width="150" height="150">';
-        parts[1] = '<circle cx="75" cy="75" r="50" fill="lavender" />';
-        parts[2] = '</svg>';
+        parts[1] = '<circle cx="75" cy="75" r="50" fill="';
+        parts[2] = pluck(tokenId);
+        parts[3] = '" />';
+        parts[4] = '</svg>';
 
-        string memory output = string(abi.encodePacked(parts[0], parts[1], parts[2]));
+        string memory output = string(abi.encodePacked(parts[0], parts[1], parts[2], parts[3], parts[4]));
         
         string memory json = Base64.encode(bytes(string(abi.encodePacked('{"name": "Color:', toString(tokenId), '", "description": "Purple polka dots are on chain NFTs I made for Dapp Camp.", "image": "data:image/svg+xml;base64,', Base64.encode(bytes(output)), '"}'))));
         output = string(abi.encodePacked('data:application/json;base64,', json));
