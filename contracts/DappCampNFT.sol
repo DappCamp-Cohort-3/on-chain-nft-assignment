@@ -33,7 +33,7 @@ contract DappCampNFT is ERC721Enumerable, Ownable {
     function tokenURI(uint256 tokenId) override public view returns (string memory) {
         string memory var_pluck = pluck(tokenId, "Lisboa", collection);
 
-        string memory output = string(abi.encode('<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100"><rect width="100" height="100" fill="blue" />', var_pluck ,'</svg>'));
+        string memory output = string(abi.encodePacked('<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100"><rect width="100" height="100" fill="blue" />', var_pluck ,'</svg>'));
 
         string memory json = Base64.encode(bytes(string(abi.encodePacked('{"name": "Lisbon', Strings.toString(tokenId), '", "description": "Capital of Portugal", "image": "data:image/svg+xml;base64,', Base64.encode(bytes(output)), '"}'))));
         output = string(abi.encodePacked('data:application/json;base64,', json));
