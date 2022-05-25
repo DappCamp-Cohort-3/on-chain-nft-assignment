@@ -16,12 +16,12 @@ if (NETWORK == TEST_NETWORK) {
   networks = {
     rinkeby: {
       url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
-      accounts: [`0x${WALLET_PRIVATE_KEY}`]
-    }
-  }
+      accounts: [`0x${WALLET_PRIVATE_KEY}`],
+    },
+  };
 }
 
 module.exports = {
   solidity: "0.8.1",
-  networks: networks
+  networks: networks,
 };
