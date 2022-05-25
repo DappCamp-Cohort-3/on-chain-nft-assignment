@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 contract DappCampNFT is ERC721Enumerable, Ownable {
-    uint256 public MAX_MINTABLE_TOKENS = 5;
+    uint256 public MAX_MINTABLE_TOKENS = 7;
 
     constructor() ERC721("Shreya's DappCamp NFT", "DCAMP") Ownable() {}
 
@@ -17,7 +17,9 @@ contract DappCampNFT is ERC721Enumerable, Ownable {
         "orchid",
         "indigo",
         "lavender",
-        "thistle"
+        "thistle",
+        "lightpurple",
+        "purple"
     ];
 
     function random(string memory input) internal pure returns (uint256) {
@@ -33,7 +35,7 @@ contract DappCampNFT is ERC721Enumerable, Ownable {
     function tokenURI(uint256 tokenId) override public view returns (string memory) {
         string[5] memory parts;
         // keccak256
-        parts[0] = '<svg width="150" height="150">';
+        parts[0] = '<svg xmlns="http://www.w3.org/2000/svg"  preserveAspectRatio="xMinYMin meet" viewBox="0 0 800 800"><rect width="90" height="90" fill="white" />';
         parts[1] = '<circle cx="75" cy="75" r="50" fill="';
         parts[2] = pluck(tokenId, "temp", collection);
         parts[3] = '" />';
