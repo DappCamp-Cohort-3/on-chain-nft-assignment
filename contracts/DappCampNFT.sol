@@ -12,7 +12,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract DappCampNFT is ERC721Enumerable, Ownable {
     uint256 public MAX_MINTABLE_TOKENS = 5;
 
-    constructor() ERC721("DappCamp NFT", "DCAMP") Ownable() {}
+    constructor() ERC721("Thomas NFT", "TNFT") Ownable() {}
 
     string[] private backgroundColors = ["st0", "st2"];
 
