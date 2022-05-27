@@ -1,8 +1,10 @@
+const address = require('../src/addresses.json');
+
 async function main() {
   const DappCampNFTFactory = await ethers.getContractFactory("DappCampNFT");
-  const dappCampNFT = DappCampNFTFactory.attach("0xa0b55BF2B73b4AB1D1FF98F004C440Da9ad34a8b");
+  const dappCampNFT = DappCampNFTFactory.attach(address.dappCampNFT);
 
-  await dappCampNFT.claim(2);
+  await dappCampNFT.claim(1);
 }
 
 main()
