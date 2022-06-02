@@ -1,8 +1,8 @@
 async function main() {
   const DappCampNFTFactory = await ethers.getContractFactory("DappCampNFT");
-  const dappCampNFT = DappCampNFTFactory.attach("CONTRACT_ADDR");
+  const dappCampNFT = DappCampNFTFactory.attach("0x8985f2679bf8B7970BBE12d26cFBF6b39a8d0C79");
 
-  await dappCampNFT.claim(1);
+  await dappCampNFT.claim(5);
 }
 
 main()
